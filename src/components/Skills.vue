@@ -8,12 +8,27 @@
         v-validate="'min:5'"
         name="skill"
       >
-      <p class="alert" v-if="errors.has('skill')">{{ errors.first('skill') }}</p>
-    </form>    
+
+      <transition
+        name="alert-in"
+        enter-active-class="animated flipInX"
+        leave-active-class="animated flipOutX"
+      >
+        <p class="alert" v-if="errors.has('skill')">{{ errors.first('skill') }}</p>
+      </transition>
+    </form>
+
     <div class="holder">
       <ul>
-        <li v-for="(data, index) in skills" :key="index">{{data.skill}}</li>
+        <transition-group
+          name="list"
+          enter-active-class="animated bounceInUp"
+          leave-active-class="animated bounceOutDown"
+        >
+          <li v-for="(data, index) in skills" :key="'index-' + index">{{data.skill}}</li>
+        </transition-group>
       </ul>
+
       <p>These are the skills that you possess.</p>
     </div>
   </div>
@@ -45,13 +60,13 @@ export default {
   },
   methods: {
     addSkill() {
-      this.$validator.validateAll().then((result) => {
+      this.$validator.validateAll().then(result => {
         if (result) {
           this.skills.push({ skill: this.skill });
-          this.skill = '';
+          this.skill = "";
         } else {
           // eslint-disable-next-line
-          console.log('Not valid');
+          console.log("Not valid");
         }
       });
     }
@@ -61,6 +76,8 @@ export default {
 </script>
 
 <style scoped>
+@import "https://cdn.jsdelivr.net/npm/animate.css@3.5.1";
+
 .holder {
   background: #fff;
 }
@@ -105,5 +122,23 @@ input {
   display: inline-block;
   padding: 5px;
   margin-top: -20px;
+}
+
+.alert-in-enter-active {
+  animation: bounce-in 0.5s;
+}
+.alert-in-leave-active {
+  animation: bounce-in 0.5s reverse;
+}
+@keyframes bounce-in {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 </style>
