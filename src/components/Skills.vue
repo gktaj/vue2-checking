@@ -106,6 +106,7 @@ ul li {
 
 ul li i {
   float: right;
+  cursor: pointer;
 }
 
 p {
