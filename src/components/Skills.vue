@@ -50,6 +50,7 @@ export default {
           this.skills.push({ skill: this.skill });
           this.skill = '';
         } else {
+          // eslint-disable-next-line
           console.log('Not valid');
         }
       });
