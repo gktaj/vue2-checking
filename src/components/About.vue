@@ -1,7 +1,8 @@
 <template>
   <div class="about">
     <h1>Hello {{ their_name }}, this is an about page</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna ali...</p>
+    <p>Try to change the name.</p>
+    <p>And refresh the page.</p>
   </div>
 </template>
 
