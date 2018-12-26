@@ -31,7 +31,7 @@ $ npm install --save-dev vue-gh-pages
   ...
 ```
 
-### 3. Add "homepage" filed to package.json
+### 3. Add "homepage" field to package.json
 ```
 "homepage": "https://github.com/kdevsoftware/vue2-checking",
 "scripts": {
