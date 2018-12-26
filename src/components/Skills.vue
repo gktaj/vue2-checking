@@ -15,6 +15,8 @@
 
         <p v-if="skills.length >= 1">You have more than 1 skill</p>
         <p v-else>You have less than or equal to 1 skill</p>
+
+        <div v-bind:class="{alert: showAlert}"></div>
       </div>
     </div>
   </div>
@@ -27,12 +29,18 @@ export default {
     return {
       name: "kdevsoftware",
       btnState: true,
-      skills: [{ skill: "Vue.js" }, { skill: "Frontend Developer" }]
+      skills: [{ skill: "Vue.js" }, { skill: "Frontend Developer" }],
+      showAlert: true
     };
   },
   props: {}
 };
 </script>
 
-<style src="./Skills.css" scoped>
+<style scoped>
+.alert {
+  background-color: yellow;
+  width: 100%;
+  height: 30px;
+}
 </style>
