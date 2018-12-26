@@ -17,6 +17,7 @@
         <p v-else>You have less than or equal to 1 skill</p>
 
         <div v-bind:class="{alert: showAlert}"></div>
+        <div v-bind:class="alertObject"></div>
       </div>
     </div>
   </div>
@@ -30,7 +31,10 @@ export default {
       name: "kdevsoftware",
       btnState: true,
       skills: [{ skill: "Vue.js" }, { skill: "Frontend Developer" }],
-      showAlert: true
+      showAlert: true,
+      alertObject: {
+        alert: true
+      }
     };
   },
   props: {}
@@ -42,5 +46,6 @@ export default {
   background-color: yellow;
   width: 100%;
   height: 30px;
+  margin-bottom: 30px;
 }
 </style>
