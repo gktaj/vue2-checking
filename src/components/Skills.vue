@@ -18,6 +18,8 @@
 
         <div v-bind:class="{alert: showAlert}"></div>
         <div v-bind:class="alertObject"></div>
+        <div class="alert" v-bind:style="{ background: bgColor, width: bgWidth, height: bgHeight }"></div>
+        <div class="alert" v-bind:style="alertStyle"></div>
       </div>
     </div>
   </div>
@@ -34,6 +36,14 @@ export default {
       showAlert: true,
       alertObject: {
         alert: true
+      },
+      bgColor: 'red',
+      bgWidth: '100px',
+      bgHeight: '200px',
+      alertStyle: {
+        background: 'red',
+        width: '100px',
+        height: '200px'
       }
     };
   },
