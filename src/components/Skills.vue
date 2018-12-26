@@ -1,6 +1,8 @@
 <template>
   <div class="container">
-    <input type="text" placeholder="Enter a skill you have.." v-model="skill">
+    <form @submit.prevent="addSkill">
+      <input type="text" placeholder="Enter a skill you have.." v-model="skill">
+    </form>    
     {{skill}}
     <div class="holder">
       <ul>
@@ -33,6 +35,12 @@ export default {
         height: "200px"
       }
     };
+  },
+  methods: {
+    addSkill() {
+      this.skills.push({skill: this.skill});
+      this.skill = '';
+    }
   },
   props: {}
 };
