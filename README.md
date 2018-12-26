@@ -1,29 +1,16 @@
 # vue2-checking
 
-## Project setup
+## Local environment
 ```
-npm install
+$ git clone https://github.com/kdevsoftware/vue2-checking.git
+$ cd vue2-checking
+$ npm install
+$ npm run serve
 ```
+Navigate to `http://localhost:8080/`.
 
-### Compiles and hot-reloads for development
+## Deploying to github page
 ```
-npm run serve
+$ npm deploy
 ```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Navigate to `https://kdevsoftware.github.io/vue2-checking/`.
