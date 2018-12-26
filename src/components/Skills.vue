@@ -1,20 +1,23 @@
 <template>
   <div class="skills">
-    {{ name }}
-    <button v-on:click="changeName" v-bind:disabled="btnState">Change Name</button>
+    <h1 v-once>{{name}}</h1>
+    {{ btnState ? 'The button is disabled' : 'The button is active'}}
+    <button
+      v-on:click="changeName"
+      v-bind:disabled="btnState"
+    >Change Name</button>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Skills',
+  name: "Skills",
   data() {
     return {
-      name: 'kdevsoftware',
+      name: "kdevsoftware",
       btnState: true
-    }
+    };
   },
-  props: {
-  }
-}
+  props: {}
+};
 </script>
