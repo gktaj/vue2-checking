@@ -1,6 +1,7 @@
 <template>
   <div class="skills">
     {{ name }}
+    <button v-on:click="changeName" v-bind:disabled="btnState">Change Name</button>
   </div>
 </template>
 
@@ -9,7 +10,8 @@ export default {
   name: 'Skills',
   data() {
     return {
-      name: 'kdevsoftware'
+      name: 'kdevsoftware',
+      btnState: true
     }
   },
   props: {
