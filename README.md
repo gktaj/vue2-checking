@@ -1,29 +1,45 @@
 # vue2-checking
+This project was built by Vue 3.2.1.
 
-## Project setup
+## Local environment
 ```
-npm install
+$ git clone https://github.com/kdevsoftware/vue2-checking.git
+$ cd vue2-checking
+$ npm install
+$ npm run serve
 ```
+Navigate to `http://localhost:8080/`.
 
-### Compiles and hot-reloads for development
+## Deploying to github page
 ```
-npm run serve
+$ npm run deploy
 ```
+Navigate to `https://kdevsoftware.github.io/vue2-checking/`.
 
-### Compiles and minifies for production
-```
-npm run build
-```
+## Reference for deploying to github page
 
-### Run your tests
+### 1. Install vue-gh-pages package
 ```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
+$ npm install --save-dev vue-gh-pages
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### 2. Add "deploy" script to package.json
+```
+"scripts": {
+  ...  
+  "deploy": "node ./node_modules/vue-gh-pages/index.js --branch gh-pages"
+  ...
+```
+
+### 3. Add "homepage" filed to package.json
+```
+"homepage": "https://github.com/kdevsoftware/vue2-checking",
+"scripts": {
+  ...
+```
+
+### 4. Deploy to github
+```
+$ npm run deploy
+```
+Navigate to `https://kdevsoftware.github.io/vue2-checking/`.
