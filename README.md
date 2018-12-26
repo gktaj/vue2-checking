@@ -12,7 +12,7 @@ Navigate to `http://localhost:8080/`.
 
 ## Deploying to github page
 ```
-$ npm deploy
+$ npm run deploy
 ```
 Navigate to `https://kdevsoftware.github.io/vue2-checking/`.
 
@@ -40,6 +40,6 @@ $ npm install --save-dev vue-gh-pages
 
 ### 4. Deploy to github
 ```
-$ npm deploy
+$ npm run deploy
 ```
 Navigate to `https://kdevsoftware.github.io/vue2-checking/`.
