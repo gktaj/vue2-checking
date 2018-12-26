@@ -9,7 +9,11 @@
         name="skill"
       >
 
-      <transition name="alert-in">
+      <transition
+        name="alert-in"
+        enter-active-class="animated flipInX"
+        leave-active-class="animated flipOutX"
+      >
         <p class="alert" v-if="errors.has('skill')">{{ errors.first('skill') }}</p>
       </transition>
     </form>
@@ -64,6 +68,8 @@ export default {
 </script>
 
 <style scoped>
+@import "https://cdn.jsdelivr.net/npm/animate.css@3.5.1";
+
 .holder {
   background: #fff;
 }
@@ -111,10 +117,10 @@ input {
 }
 
 .alert-in-enter-active {
-  animation: bounce-in .5s;
+  animation: bounce-in 0.5s;
 }
 .alert-in-leave-active {
-  animation: bounce-in .5s reverse;
+  animation: bounce-in 0.5s reverse;
 }
 @keyframes bounce-in {
   0% {
