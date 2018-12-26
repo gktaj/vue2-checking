@@ -33,3 +33,6 @@ export default {
   props: {}
 };
 </script>
+
+<style src="./Skills.css" scoped>
+</style>
