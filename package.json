@@ -2,6 +2,7 @@
   "name": "vue2-checking",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://github.com/kdevsoftware/vue2-checking",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
