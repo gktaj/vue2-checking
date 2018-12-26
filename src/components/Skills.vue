@@ -2,7 +2,6 @@
   <div class="container">
     <form @submit.prevent="addSkill">
       <input type="text" placeholder="Enter a skill you have.." v-model="skill">
-      <input type="checkbox" id="checkbox" v-model="checked">
     </form>    
     {{skill}}
     <div class="holder">
@@ -42,7 +41,6 @@ export default {
     addSkill() {
       this.skills.push({skill: this.skill});
       this.skill = '';
-      console.log('The checkbox value is: ' + this.checked);
     }
   },
   props: {}
