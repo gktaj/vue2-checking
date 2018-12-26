@@ -8,8 +8,11 @@
         v-validate="'min:5'"
         name="skill"
       >
-      <p class="alert" v-if="errors.has('skill')">{{ errors.first('skill') }}</p>
-    </form>    
+
+      <transition name="alert-in">
+        <p class="alert" v-if="errors.has('skill')">{{ errors.first('skill') }}</p>
+      </transition>
+    </form>
     <div class="holder">
       <ul>
         <li v-for="(data, index) in skills" :key="index">{{data.skill}}</li>
@@ -45,13 +48,13 @@ export default {
   },
   methods: {
     addSkill() {
-      this.$validator.validateAll().then((result) => {
+      this.$validator.validateAll().then(result => {
         if (result) {
           this.skills.push({ skill: this.skill });
-          this.skill = '';
+          this.skill = "";
         } else {
           // eslint-disable-next-line
-          console.log('Not valid');
+          console.log("Not valid");
         }
       });
     }
@@ -105,5 +108,23 @@ input {
   display: inline-block;
   padding: 5px;
   margin-top: -20px;
+}
+
+.alert-in-enter-active {
+  animation: bounce-in .5s;
+}
+.alert-in-leave-active {
+  animation: bounce-in .5s reverse;
+}
+@keyframes bounce-in {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 </style>
